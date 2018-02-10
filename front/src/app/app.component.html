@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-ms-12 col-lg-12">
+      <select name="platform" id="platform">
+        <option value="pc" selected>PC</option>
+        <option value="ps4">PS4</option>
+        <option value="xbox">Xbox</option>
+      </select>
+      <input type="username" placeholder="Username">
+    </div>
+    <!--
+      Squelette des stat par joueur.
+        ->Stat blobaux
+        ->Stat par type de game (Solo/Duo/Squad)
+    -->
+    <div class="col-sm-12 col-ms-12 col-lg-12">
+      <h3>Stats</h3>
+      <hr>
+      <div class="card">
+        <div class="card-header">
+          {{$user.epicUserHandle}} [{{$user.platformNameLong}}] - {{$lifeTimeStats.totScore}} - {{$lifeTimeStats.timePlayed}} - {{$lifeTimeStats.totMatches}} - {{$lifeTimeStats.totKill}} - {{$lifeTimeStats.totWin}} - {{$lifeTimeStats.totKD}} - {{$lifeTimeStats.totWPerc}}
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <!--
+              -> Stat general en Solo
+            -->
+            <div class="col-sm-4 col-ms-4 col-lg-4" *ngFor="let solo of $SoloGame">
+              <h3>Solo</h3>
+              <hr>
+              {{solo['kd'].label}} : {{solo['kd'].value}} <br>
+              {{solo['top1'].label}} : {{solo['top1'].value}}<br>
+              {{solo['kills'].label}} : {{solo['kills'].value}}<br>
+              {{solo['winRatio'].label}} : {{solo['winRatio'].value}}<br>
+              {{solo['matches'].label}} : {{solo['matches'].value}}
+            </div>
+            <!--
+              -> Stat general en Duo
+            -->
+            <div class="col-sm-4 col-ms-4 col-lg-4" *ngFor="let duo of $DuoGame">
+              <h3>Duo</h3>
+              <hr>
+              {{duo['kd'].label}} : {{duo['kd'].value}} <br>
+              {{duo['top1'].label}} : {{duo['top1'].value}}<br>
+              {{duo['kills'].label}} : {{duo['kills'].value}}<br>
+              {{duo['winRatio'].label}} : {{duo['winRatio'].value}}<br>
+              {{duo['matches'].label}} : {{duo['matches'].value}}
+            </div>
+            <!--
+              -> Stat general en Squad
+            -->
+            <div class="col-sm-4 col-ms-4 col-lg-4" *ngFor="let squad of $DuoGame">
+              <h3>Squad</h3>
+              <hr>
+              {{squad['kd'].label}} : {{squad['kd'].value}} <br>
+              {{squad['top1'].label}} : {{squad['top1'].value}}<br>
+              {{squad['kills'].label}} : {{squad['kills'].value}}<br>
+              {{squad['winRatio'].label}} : {{squad['winRatio'].value}}<br>
+              {{squad['matches'].label}} : {{squad['matches'].value}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-ms-12 col-lg-12">
+      <div echarts [options]="options" theme="dark" class="demo-chart"></div>
+    </div>
+    <!-- /.col-sm-12 col-ms-12 col-lg-12 -->
+  </div>
+</div>
+
+
+
