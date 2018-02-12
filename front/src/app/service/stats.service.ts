@@ -14,8 +14,8 @@ export class StatsService {
     return this.http.get(newUrl);
   }
 
-  getRecentUserStat(userId): Observable<any> {
-    const newUrl = this.URL + userId;
+  getRecentUserStat(username): Observable<any> {
+    const newUrl = this.URL + username;
     return this.http.get(newUrl);
   }
 

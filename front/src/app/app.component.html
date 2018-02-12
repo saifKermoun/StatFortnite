@@ -49,7 +49,7 @@
             <!--
               -> Stat general en Squad
             -->
-            <div class="col-sm-4 col-ms-4 col-lg-4" *ngFor="let squad of $DuoGame">
+            <div class="col-sm-4 col-ms-4 col-lg-4" *ngFor="let squad of $SquadGame">
               <h3>Squad</h3>
               <hr>
               {{squad['kd'].label}} : {{squad['kd'].value}} <br>
@@ -63,9 +63,19 @@
       </div>
     </div>
     <div class="col-sm-12 col-ms-12 col-lg-12">
-      <div echarts [options]="options" theme="dark" class="demo-chart"></div>
+      <div class="demo-chart">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
     </div>
-    <!-- /.col-sm-12 col-ms-12 col-lg-12 -->
   </div>
 </div>
 

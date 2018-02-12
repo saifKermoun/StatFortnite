@@ -31,8 +31,6 @@ export class AppComponent implements OnInit {
   $DuoGame = [];
   $SquadGame = [];
 
-  options: any;
-
   constructor(private statS: StatsService) {
 
   }
@@ -72,58 +70,13 @@ export class AppComponent implements OnInit {
         this.$DuoGame.push(this.$resStat.stats['p10']);
       },
       err => console.error(err),
-      () => this.getRecentUserStat(this.$user.accountId)
+      () => this.getRecentUserStat(this.$user.platformName)
       );
-    let xAxisData = [];
-    let data1 = [];
-    let data2 = [];
-
-    for (let i = 0; i < 100; i++) {
-      xAxisData.push('category' + i);
-      data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
-      data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
-    }
-
-    this.options = {
-      legend: {
-        data: ['bar', 'bar2'],
-        align: 'left'
-      },
-      tooltip: {},
-      xAxis: {
-        data: xAxisData,
-        silent: false,
-        splitLine: {
-          show: false
-        }
-      },
-      yAxis: {
-      },
-      series: [{
-        name: 'bar',
-        type: 'bar',
-        data: data1,
-        animationDelay: function (idx) {
-          return idx * 10;
-        }
-      }, {
-        name: 'bar2',
-        type: 'bar',
-        data: data2,
-        animationDelay: function (idx) {
-          return idx * 10 + 100;
-        }
-      }],
-      animationEasing: 'quatricInOut',
-      animationDelayUpdate: function (idx) {
-        return idx * 5;
-      }
-    };
   }
 
-  getRecentUserStat(accountId) {
+  getRecentUserStat(username) {
 
-    this.statS.getRecentUserStat(accountId).subscribe(
+    this.statS.getRecentUserStat(username).subscribe(
       res => {
         this.$matchRecents = res
       },
@@ -131,4 +84,20 @@ export class AppComponent implements OnInit {
       () => console.log(this.$matchRecents)
     )
   }
+
+  public barChartOptions:any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  //Les dates
+  public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartType:string = 'bar';
+  public barChartLegend:boolean = true;
+
+  //les Kills
+  public barChartData:any[] = [
+    {
+      data: [65, 59, 80, 81, 56, 55, 40],
+      label: 'Kill'}
+  ];
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxEchartsModule } from 'ngx-echarts';
+import {ChartsModule} from "ng2-charts";
 
 import { AppComponent } from './app.component';
 import { StatsService  } from './service/stats.service';
@@ -14,7 +14,7 @@ import { StatsService  } from './service/stats.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxEchartsModule
+    ChartsModule
   ],
   providers: [StatsService],
   bootstrap: [AppComponent]

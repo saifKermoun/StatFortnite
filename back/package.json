@@ -8,16 +8,16 @@
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
+    "dateformat": "^3.0.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
     "request": "^2.83.0",
     "serve-favicon": "~2.4.5"
   },
-  "devDependencies": {
-    "@google-cloud/storage": "^1.5.2"
-  }
+  "devDependencies": {}
 }
