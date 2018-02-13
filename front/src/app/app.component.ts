@@ -8,9 +8,11 @@ import { StatsService } from './service/stats.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  public $resStat;
-  public $matchRecents;
+  $resStat = {
+    error : {},
+    stats : {}
+  };
+  //public $matchRecents;
   $user = {
       accountId: '',
       platformID : '',
@@ -27,9 +29,77 @@ export class AppComponent implements OnInit {
     totScore : '',
     timePlayed : ''
   };
-  $SoloGame = [];
-  $DuoGame = [];
-  $SquadGame = [];
+  $SoloGame = {
+    kd : {
+      label : '',
+      value: ''
+    },
+    top1 : {
+      label: '',
+      value: ''
+    },
+    kills : {
+      label: '',
+      value: ''
+    },
+    winRatio : {
+      label: '',
+      value: ''
+    },
+    matches : {
+      label: '',
+      value: ''
+    }
+  };
+  $DuoGame =  {
+    kd : {
+      label : '',
+      value: ''
+    },
+    top1 : {
+      label: '',
+      value: ''
+    },
+    kills : {
+      label: '',
+      value: ''
+    },
+    winRatio : {
+      label: '',
+      value: ''
+    },
+    matches : {
+      label: '',
+      value: ''
+    }
+  };
+  $SquadGame =  {
+    kd : {
+      label : '',
+      value: ''
+    },
+    top1 : {
+      label: '',
+      value: ''
+    },
+    kills : {
+      label: '',
+      value: ''
+    },
+    winRatio : {
+      label: '',
+      value: ''
+    },
+    matches : {
+      label: '',
+      value: ''
+    }
+  };
+
+  $inputs = {
+    platforms: 'pc',
+    username: 'haadokenn'
+  };
 
   constructor(private statS: StatsService) {
 
@@ -46,58 +116,67 @@ export class AppComponent implements OnInit {
      * dans la variable $DuoGame => les info en duo game ,      //                               //
      * dans la variable $SquadGame => les info en suqad game ,      //                               //
      */
-    this.statS.getStat('pc', 'haadokenn').subscribe(
-      res => {
-        this.$resStat = res;
-        this.$user = {
-          accountId : this.$resStat.accountId,
-          platformID: this.$resStat.accountId,
-          platformName : this.$resStat.platformName,
-          platformNameLong : this.$resStat.platformNameLong,
-          epicUserHandle : this.$resStat.epicUserHandle
-        };
-        this.$lifeTimeStats = {
-          totWin : this.$resStat.lifeTimeStats[8].value,
-          totMatches : this.$resStat.lifeTimeStats[7].value,
-          totKill : this.$resStat.lifeTimeStats[10].value,
-          totKD : this.$resStat.lifeTimeStats[11].value,
-          totWPerc : this.$resStat.lifeTimeStats[9].value,
-          totScore : this.$resStat.lifeTimeStats[6].value,
-          timePlayed : this.$resStat.lifeTimeStats[13].value,
-        };
-        this.$SoloGame.push(this.$resStat.stats['p2']);
-        this.$SquadGame.push(this.$resStat.stats['p9']);
-        this.$DuoGame.push(this.$resStat.stats['p10']);
-      },
-      err => console.error(err),
-      () => this.getRecentUserStat(this.$user.platformName)
-      );
+    this.getStat(this.$inputs.platforms, this.$inputs.username)
   }
 
-  getRecentUserStat(username) {
-
-    this.statS.getRecentUserStat(username).subscribe(
+  getStat(platform, username) {
+    this.statS.getStat(platform, username).subscribe(
       res => {
-        this.$matchRecents = res
+        if(!res.error){
+          this.$resStat = res;
+          this.$user = {
+            accountId : res.accountId,
+            platformID: res.accountId,
+            platformName : res.platformName,
+            platformNameLong : res.platformNameLong,
+            epicUserHandle : res.epicUserHandle
+          };
+          this.$lifeTimeStats = {
+            totWin : res.lifeTimeStats[8].value,
+            totMatches : res.lifeTimeStats[7].value,
+            totKill : res.lifeTimeStats[10].value,
+            totKD : res.lifeTimeStats[11].value,
+            totWPerc : res.lifeTimeStats[9].value,
+            totScore : res.lifeTimeStats[6].value,
+            timePlayed : res.lifeTimeStats[13].value,
+          };
+          this.$SoloGame = this.$resStat.stats['p2'];
+          this.$SquadGame = this.$resStat.stats['p9'];
+          this.$DuoGame = this.$resStat.stats['p10'];
+        }else {
+          this.$resStat = res;
+        }
       },
       err => console.error(err),
-      () => console.log(this.$matchRecents)
-    )
+      //() => console.log(this.$resStat)
+    );
   }
 
-  public barChartOptions:any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-  //Les dates
-  public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  public barChartType:string = 'bar';
-  public barChartLegend:boolean = true;
+  // plus tard
+  // getRecentUserStat(username) {
+  //
+  //   this.statS.getRecentUserStat(username).subscribe(
+  //     res => {
+  //       this.$matchRecents = res
+  //     },
+  //     err => console.error(err),
+  //     () => console.log(this.$matchRecents)
+  //   )
+  // }
 
-  //les Kills
-  public barChartData:any[] = [
-    {
-      data: [65, 59, 80, 81, 56, 55, 40],
-      label: 'Kill'}
-  ];
+  // public barChartOptions:any = {
+  //   scaleShowVerticalLines: false,
+  //   responsive: true
+  // };
+  // Les dates
+  // public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  // public barChartType:string = 'bar';
+  // public barChartLegend:boolean = true;
+  //
+  // les Kills
+  // public barChartData:any[] = [
+  //   {
+  //     data: [65, 59, 80, 81, 56, 55, 40],
+  //     label: 'Kill'}
+  // ];
 }

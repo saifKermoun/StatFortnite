@@ -1,83 +1,185 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-ms-12 col-lg-12">
-      <select name="platform" id="platform">
-        <option value="pc" selected>PC</option>
-        <option value="ps4">PS4</option>
-        <option value="xbox">Xbox</option>
-      </select>
-      <input type="username" placeholder="Username">
-    </div>
-    <!--
-      Squelette des stat par joueur.
-        ->Stat blobaux
-        ->Stat par type de game (Solo/Duo/Squad)
-    -->
-    <div class="col-sm-12 col-ms-12 col-lg-12">
-      <h3>Stats</h3>
+<div class="container align-content-center" *ngIf="$resStat.error">
+  <div class="col-12 align-content-center">
+    <h1 class="text-center">{{$resStat.error}}</h1>
+  </div>
+  <!-- /.col -->
+</div>
+<!-- /.container -->
+<div class="container" *ngIf="!$resStat.error">
+  <div class="row flex-center">
+    <div class="col-6">
+      <h3>Rechercher par platform et username : </h3>
       <hr>
       <div class="card">
-        <div class="card-header">
-          {{$user.epicUserHandle}} [{{$user.platformNameLong}}] - {{$lifeTimeStats.totScore}} - {{$lifeTimeStats.timePlayed}} - {{$lifeTimeStats.totMatches}} - {{$lifeTimeStats.totKill}} - {{$lifeTimeStats.totWin}} - {{$lifeTimeStats.totKD}} - {{$lifeTimeStats.totWPerc}}
-        </div>
         <div class="card-body">
-          <div class="row">
-            <!--
-              -> Stat general en Solo
-            -->
-            <div class="col-sm-4 col-ms-4 col-lg-4" *ngFor="let solo of $SoloGame">
-              <h3>Solo</h3>
-              <hr>
-              {{solo['kd'].label}} : {{solo['kd'].value}} <br>
-              {{solo['top1'].label}} : {{solo['top1'].value}}<br>
-              {{solo['kills'].label}} : {{solo['kills'].value}}<br>
-              {{solo['winRatio'].label}} : {{solo['winRatio'].value}}<br>
-              {{solo['matches'].label}} : {{solo['matches'].value}}
+          <form class="form-inline">
+            <div class="md-form form-group">
+              <select name="platform" class="mdb-select dropdown-content select-dropdown" id="platform" [(ngModel)]="$inputs.platforms">
+                <option value="pc" selected>PC</option>
+                <option value="ps4">PS4</option>
+                <option value="xbox">Xbox</option>
+              </select>
             </div>
-            <!--
-              -> Stat general en Duo
-            -->
-            <div class="col-sm-4 col-ms-4 col-lg-4" *ngFor="let duo of $DuoGame">
-              <h3>Duo</h3>
-              <hr>
-              {{duo['kd'].label}} : {{duo['kd'].value}} <br>
-              {{duo['top1'].label}} : {{duo['top1'].value}}<br>
-              {{duo['kills'].label}} : {{duo['kills'].value}}<br>
-              {{duo['winRatio'].label}} : {{duo['winRatio'].value}}<br>
-              {{duo['matches'].label}} : {{duo['matches'].value}}
+            <div class="md-form form-group">
+
+              <input mdbActive type="text" class="form-control" id="form10" name="username" mdbInputValidate [(ngModel)]="$inputs.username">
+              <label class="active" for="form10">Username</label>
             </div>
-            <!--
-              -> Stat general en Squad
-            -->
-            <div class="col-sm-4 col-ms-4 col-lg-4" *ngFor="let squad of $SquadGame">
-              <h3>Squad</h3>
-              <hr>
-              {{squad['kd'].label}} : {{squad['kd'].value}} <br>
-              {{squad['top1'].label}} : {{squad['top1'].value}}<br>
-              {{squad['kills'].label}} : {{squad['kills'].value}}<br>
-              {{squad['winRatio'].label}} : {{squad['winRatio'].value}}<br>
-              {{squad['matches'].label}} : {{squad['matches'].value}}
+
+            <div class="md-form form-group">
+              <button class="btn btn-primary btn-sm waves-light" mdbRippleRadius (click)="getStat($inputs.platforms,$inputs.username)">Rechercher</button>
             </div>
-          </div>
+
+          </form>
+
         </div>
-      </div>
-    </div>
-    <div class="col-sm-12 col-ms-12 col-lg-12">
-      <div class="demo-chart">
-        <div style="display: block">
-          <canvas baseChart
-                  [datasets]="barChartData"
-                  [labels]="barChartLabels"
-                  [options]="barChartOptions"
-                  [legend]="barChartLegend"
-                  [chartType]="barChartType"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)"></canvas>
-        </div>
+        <!-- /.grid-body -->
       </div>
     </div>
   </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <h3>Stats</h3>
+      <hr>
+      <div class="card">
+        <div class="card-header unique-color-dark">
+          <h4 class="white-text">{{$user.epicUserHandle}}  <span class="float-right white-text size-change">{{$lifeTimeStats.totWin}} Wins | {{$lifeTimeStats.totKill}} Kills | {{$lifeTimeStats.totMatches}} Games | {{$lifeTimeStats.timePlayed}} Played</span></h4>
+        </div>
+        <div class="card-body">
+          <div class="row"> <!-- START ROW -->
+            <div class="col-4">
+              <!--Table-->
+              <table class="table">
+                <!--Table head-->
+                <thead class="mdb-color darken-3">
+                <tr class="text-white">
+                  <th><h4>Solo</h4></th>
+                  <th></th>
+                </tr>
+                </thead>
+                <!--Table head-->
+
+                <!--Table body-->
+                <tbody>
+                <tr>
+                  <th scope="row">{{$SoloGame.kd.label}}</th>
+                  <td>{{$SoloGame.kd.value}}</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">{{$SoloGame.top1.label}}</th>
+                  <td>{{$SoloGame.top1.value}}</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">{{$SoloGame.kills.label}}</th>
+                  <td>{{$SoloGame.kills.value}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{$SoloGame.winRatio.label}}</th>
+                  <td>{{$SoloGame.winRatio.value}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{$SoloGame.matches.label}}</th>
+                  <td>{{$SoloGame.matches.value}}</td>
+                </tr>
+                </tbody>
+                <!--Table body-->
+              </table>
+            </div>
+            <div class="col-4">
+              <!--Table-->
+              <table class="table">
+                <!--Table head-->
+                <thead class="mdb-color darken-3">
+                <tr class="text-white">
+                  <th><h4>Duo</h4></th>
+                  <th></th>
+                </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody>
+                <tr>
+                  <th scope="row">{{$DuoGame.kd.label}}</th>
+                  <td>{{$DuoGame.kd.value}}</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">{{$DuoGame.top1.label}}</th>
+                  <td>{{$DuoGame.top1.value}}</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">{{$DuoGame.kills.label}}</th>
+                  <td>{{$DuoGame.kills.value}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{$DuoGame.winRatio.label}}</th>
+                  <td>{{$DuoGame.winRatio.value}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{$DuoGame.matches.label}}</th>
+                  <td>{{$DuoGame.matches.value}}</td>
+                </tr>
+                </tbody>
+                <!--Table body-->
+              </table>
+            </div>
+            <div class="col-4">
+              <!--Table-->
+              <table class="table">
+                <!--Table head-->
+                <thead class="mdb-color darken-3">
+                <tr class="text-white">
+                  <th><h4>Squad</h4></th>
+                  <th></th>
+                </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody>
+                <tr>
+                  <th scope="row">{{$SquadGame.kd.label}}</th>
+                  <td>{{$SquadGame.kd.value}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{$SquadGame.top1.label}}</th>
+                  <td>{{$SquadGame.top1.value}}</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">{{$SquadGame.kills.label}}</th>
+                  <td>{{$SquadGame.kills.value}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{$SquadGame.winRatio.label}}</th>
+                  <td>{{$SquadGame.winRatio.value}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{$SquadGame.matches.label}}</th>
+                  <td>{{$SquadGame.matches.value}}</td>
+                </tr>
+                </tbody>
+                <!--Table body-->
+              </table>
+            </div>
+          </div> <!-- END ROW -->
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
 </div>
-
-
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <h1>Match history</h1>
+      <hr>
+      <h3 class="flex-center">Match history coming soon...</h3>
+    </div>
+    <!-- /.col-12 -->
+  </div>
+  <!-- /.row -->
+</div>
 

@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var request = require('request');
 var router = express.Router();
-var fs = require('fs');
 var dateFormat = require('dateformat');
 var mysql = require('mysql');
 
@@ -29,7 +28,7 @@ var options = {
     }
 };
 var $body;
-var $accountId;
+//var $accountId;
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -50,37 +49,41 @@ router.get('/:platform/:username', function(req, res, next) {
     request.get(newUrl, options, function (err, response, body) {
         if (err) { return console.log(err); }
         $body = JSON.parse(body);
-        $accountId = $body.accountId;
-        $fileContent = [];
-
-        $body.recentMatches.forEach(function(item, index) {
-                $fileContent.push({
-                    user_ID:  $accountId,
-                    username : username,
-                    date: dateFormat(item.dateCollected, "yyyy-mm-dd"),
-                    kills: item.kills
-                });
-                //TODO : Find les doublons et additionner les kills
-            var sql = "INSERT INTO stats SET ?";
-            // con.query(sql, $fileContent, function (error, results, fields) {
-            //     if (error) throw error;
-            // })
-        });
-        res.send($fileContent);
+        //PLUS TARD ..
+        // $accountId = $body.accountId;
+        // $fileContent = [];
+        //
+        // $body.recentMatches.forEach(function(item, index) {
+        //         $fileContent.push({
+        //             user_ID:  $accountId,
+        //             username : username,
+        //             date: dateFormat(item.dateCollected, "yyyy-mm-dd"),
+        //             kills: item.kills,
+        //             top1: item.top1
+        //         });
+        //         //TODO : Find les doublons et additionner les kills
+        //     var sql = "INSERT INTO stats SET ?";
+        //     // con.query(sql, $fileContent, function (error, results, fields) {
+        //     //     if (error) throw error;
+        //     // })
+        // });
+        res.send($body);
     });
 });
+
+//plus tard
 /**
  * get Stat recent match d'un joueur par :username
  */
-router.get('/:username', function (req, res, next) {
-    var username = req.params.username;
-    username = mysql.escape(username);
-    var sql = "SELECT  COUNT(`date`) AS nbr_doublon, `date`, SUM(`kills`) as totKill FROM stats WHERE `username` = " + username  + " GROUP BY `date`";
-    con.query(sql, function (error, resuls, field) {
-        if (error) throw error;
-        else res.send(resuls);
-    })
-});
+// router.get('/:username', function (req, res, next) {
+//     var username = req.params.username;
+//     username = mysql.escape(username);
+//     var sql = "SELECT  COUNT(`date`) AS nbr_doublon, `date`, SUM(`kills`) as totKill FROM stats WHERE `username` = " + username  + " GROUP BY `date`";
+//     con.query(sql, function (error, resuls, field) {
+//         if (error) throw error;
+//         else res.send(resuls);
+//     })
+// });
 
 
 module.exports = router;
