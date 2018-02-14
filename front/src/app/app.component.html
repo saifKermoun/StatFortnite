@@ -40,7 +40,7 @@
   <br>
   <div class="row">
     <div class="col">
-      <h3>Stats</h3>
+      <h3>Stats <span class="btn btn-info btn-sm float-right">Voir graph</span></h3>
       <hr>
       <div class="card">
         <div class="card-header unique-color-dark">
@@ -54,7 +54,7 @@
                 <!--Table head-->
                 <thead class="mdb-color darken-3">
                 <tr class="text-white">
-                  <th><h4>Solo</h4></th>
+                  <th><h4>SOLO</h4></th>
                   <th></th>
                 </tr>
                 </thead>
@@ -94,7 +94,7 @@
                 <!--Table head-->
                 <thead class="mdb-color darken-3">
                 <tr class="text-white">
-                  <th><h4>Duo</h4></th>
+                  <th><h4>DUO</h4></th>
                   <th></th>
                 </tr>
                 </thead>
@@ -133,7 +133,7 @@
                 <!--Table head-->
                 <thead class="mdb-color darken-3">
                 <tr class="text-white">
-                  <th><h4>Squad</h4></th>
+                  <th><h4>SQUAD</h4></th>
                   <th></th>
                 </tr>
                 </thead>
@@ -176,10 +176,50 @@
     <div class="col-12">
       <h1>Match history</h1>
       <hr>
-      <h3 class="flex-center">Match history coming soon...</h3>
+      <div class="card">
+        <div class="card-header">
+          Update in X minutes
+        </div>
+        <div class="card-body elegant-color-dark">
+          <div id="match-listing" class="dtr-match-listing-2">
+            <div class="dtr-match-entry" *ngFor="let recentMatch of $recentMatch">
+              <div class="details">
+                <div class="title">{{recentMatch.matches}} matches</div>
+                <div class="subtitle">
+                  temps ecoulé
+                </div>
+              </div>
+              <div class="stats">
+                <div class="stat">
+                  <span class="name">Win</span>
+                  <span class="value">{{recentMatch.top1}}</span>
+                </div>
+                <div class="stat" [ngSwitch]="recentMatch.playlist">
+                  <span class="name">MODE</span>
+                  <span class="value" *ngSwitchCase="'p9'">SQUAD</span>
+                  <span class="value" *ngSwitchCase="'p2'">SOLO</span>
+                  <span class="value" *ngSwitchCase="'p10'">DUO</span>
+                </div>
+                <div class="stat">
+                  <span class="name">SCORE</span>
+                  <span class="value">+ {{recentMatch.score}}</span>
+                </div>
+                <div class="stat">
+                  <span class="name">KILLS</span>
+                  <span class="value">{{recentMatch.kills}}</span>
+                </div>
+                <div class="stat">
+                  <span class="name">TIME ALIVE</span>
+                  <span class="value">{{recentMatch.minutesPlayed}} M</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- /.col-12 -->
   </div>
   <!-- /.row -->
-</div>
+</div><br>
 

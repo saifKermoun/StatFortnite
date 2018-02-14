@@ -10,9 +10,10 @@ import { StatsService } from './service/stats.service';
 export class AppComponent implements OnInit {
   $resStat = {
     error : {},
-    stats : {}
+    stats : {},
+    recentMatches : {}
   };
-  //public $matchRecents;
+
   $user = {
       accountId: '',
       platformID : '',
@@ -95,34 +96,33 @@ export class AppComponent implements OnInit {
       value: ''
     }
   };
-
   $inputs = {
     platforms: 'pc',
     username: 'haadokenn'
   };
-
+  $recentMatch;
   constructor(private statS: StatsService) {
 
   }
 
   ngOnInit() {
-    /**
-     * Récupere au format json les stats du joueur selon : :platform / :username
-     * La fonction fait appel à un service "StatsService" et à la fonction getStat(platform,username)
-     * dans la variable $resStat => le json complet tel qu'on le recupere,
-     * dans la variable $user => les infos de l'utilisateur voir structure ci-dessus
-     * dans la variable $lifeTimeStats => les info stat de l'utilisateur voir structure ci-dessus
-     * dans la variable $SoloGame => les info en solo game , console.log(this.$SoloGame) pour voir son contenu
-     * dans la variable $DuoGame => les info en duo game ,      //                               //
-     * dans la variable $SquadGame => les info en suqad game ,      //                               //
-     */
-    this.getStat(this.$inputs.platforms, this.$inputs.username)
+    this.getStat(this.$inputs.platforms, this.$inputs.username);
   }
 
+  /**
+   * Récupere au format json les stats du joueur selon : :platform / :username
+   * La fonction fait appel à un service "StatsService" et à la fonction getStat(platform,username)
+   * dans la variable $resStat => le json complet tel qu'on le recupere,
+   * dans la variable $user => les infos de l'utilisateur voir structure ci-dessus
+   * dans la variable $lifeTimeStats => les info stat de l'utilisateur voir structure ci-dessus
+   * dans la variable $SoloGame => les info en solo game , console.log(this.$SoloGame) pour voir son contenu
+   * dans la variable $DuoGame => les info en duo game ,      //                               //
+   * dans la variable $SquadGame => les info en suqad game ,      //                               //
+   */
   getStat(platform, username) {
     this.statS.getStat(platform, username).subscribe(
       res => {
-        if(!res.error){
+        if (!res.error) {
           this.$resStat = res;
           this.$user = {
             accountId : res.accountId,
@@ -143,26 +143,15 @@ export class AppComponent implements OnInit {
           this.$SoloGame = this.$resStat.stats['p2'];
           this.$SquadGame = this.$resStat.stats['p9'];
           this.$DuoGame = this.$resStat.stats['p10'];
-        }else {
+          this.$recentMatch = this.$resStat.recentMatches;
+        } else {
           this.$resStat = res;
         }
       },
       err => console.error(err),
-      //() => console.log(this.$resStat)
+      // () => console.log()
     );
   }
-
-  // plus tard
-  // getRecentUserStat(username) {
-  //
-  //   this.statS.getRecentUserStat(username).subscribe(
-  //     res => {
-  //       this.$matchRecents = res
-  //     },
-  //     err => console.error(err),
-  //     () => console.log(this.$matchRecents)
-  //   )
-  // }
 
   // public barChartOptions:any = {
   //   scaleShowVerticalLines: false,
