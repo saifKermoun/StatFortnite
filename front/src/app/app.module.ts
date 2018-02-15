@@ -6,11 +6,16 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { StatsService  } from './service/stats.service';
+
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ErrorService} from "./service/error.service";
+import {routes} from "./routes/routes";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -18,10 +23,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
-    MDBBootstrapModule
+    MDBBootstrapModule,
+    routes
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [StatsService],
+  providers: [StatsService, ErrorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
