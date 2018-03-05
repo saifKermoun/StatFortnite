@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { StatsService } from '../service/stats.service';
 import { ErrorService } from "../service/error.service";
 import {ActivatedRoute} from "@angular/router";
+import {Stat} from "../class/stat";
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,9 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
+  hiddenHistory = false;
+  hiddenStat = false;
+  hiddenS3 = false;
   $resStat = {
     error : {},
     stats : {},
@@ -105,11 +109,13 @@ export class HomeComponent implements OnInit {
   };
   $recentMatch;
   username: any;
+
   constructor(private statS: StatsService, private errors: ErrorService, private route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
+
      this.username = this.route.snapshot.params.username;
       if(!this.username) {
         this.getStat(this.$inputs.platforms, this.$inputs.username);
@@ -161,7 +167,7 @@ export class HomeComponent implements OnInit {
         }
       },
       err => this.errors.handleError(err, 'Le serveur est éteint.'),
-      // () => console.log()
+       () => console.log()
     );
   }
 
@@ -197,5 +203,19 @@ export class HomeComponent implements OnInit {
         //() => console.log()
     )
   };
+
+  hideShow(value) {
+    switch (value) {
+      case 'history':
+        this.hiddenHistory = !this.hiddenHistory;
+        break;
+      case 'stat':
+        this.hiddenStat = !this.hiddenStat;
+        break;
+        case 'S3':
+        this.hiddenS3 = !this.hiddenS3;
+        break;
+    }
+  }
 
 }
