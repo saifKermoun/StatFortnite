@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment.local';
 
 @Injectable()
 export class StatsService {
-  URL = 'http://localhost:3900/';
+  URL = environment.apiUrl + environment.backPort + '/';
 
   constructor(private http: HttpClient) { }
 

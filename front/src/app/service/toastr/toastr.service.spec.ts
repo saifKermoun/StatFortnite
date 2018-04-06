@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ErrorService } from './error.service';
+import { ErrorService } from './toastr.service';
 
 describe('ErrorService', () => {
   beforeEach(() => {

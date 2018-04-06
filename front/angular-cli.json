@@ -22,7 +22,8 @@
         "../node_modules/font-awesome/scss/font-awesome.scss",
         "../node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
         "../node_modules/angular-bootstrap-md/scss/mdb-free.scss",
-        "./styles.scss"
+        "./styles.scss",
+        "../node_modules/ngx-toastr/toastr.css"
       ],
       "scripts": [
         "../node_modules/chart.js/dist/Chart.js",
@@ -32,6 +33,7 @@
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
+        "local": "environments/environment.local.ts",
         "prod": "environments/environment.prod.ts"
       }
     }

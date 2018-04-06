@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { StatsService } from '../service/stats.service';
-import { ErrorService } from "../service/error.service";
+import { ErrorService } from "../service/toastr/toastr.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -160,7 +160,7 @@ export class HomeComponent implements OnInit {
           this.$resStat = res;
         }
       },
-      err => this.errors.handleError(err, 'Le serveur est éteint.'),
+      err => this.errors.handleError('Server down', 'Le serveur est éteint.'),
       // () => console.log()
     );
   }
@@ -193,7 +193,7 @@ export class HomeComponent implements OnInit {
             this.$resStat = res;
           }
         },
-        err => this.errors.handleError(err, 'Une erreur est survenue.'),
+        err => this.errors.handleError('Erreur', 'Une erreur est survenue.'),
         //() => console.log()
     )
   };

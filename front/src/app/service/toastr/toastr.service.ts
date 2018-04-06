@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class ErrorService {
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
-  public handleError(error, msg) {
-    console.error(error);
-    this.snackBar(msg);
+  iconClasses = {
+    error: 'toast-error',
+    info: 'toast-info',
+    success: 'toast-success',
+    warning: 'toast-warning',
+    timeOut: 3000,
+    progressBar: true,
+    positionClass: 'toast-bottom-right'
+  };
+  public handleError(title ,msg) {
+
+    this.toastr.error(title, msg, this.iconClasses);
   }
 
   private snackBar (msg) {
