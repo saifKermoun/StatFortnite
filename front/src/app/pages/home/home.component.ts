@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { StatsService } from '../service/stats.service';
-import { ErrorService } from "../service/toastr/toastr.service";
+import { StatsService } from '../shared/service/StatService/stats.service';
+import { ErrorService } from "../shared/service/toastr/toastr.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
