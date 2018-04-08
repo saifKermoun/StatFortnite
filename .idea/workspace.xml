@@ -2,17 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd318e4f-adc2-48a4-a9ca-ed82d7bb17e7" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/app/home/home.component.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/app/home/home.component.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/app/home/home.component.spec.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/app/home/home.component.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/app/service/stats.service.spec.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/app/service/stats.service.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/app/service/toastr/toastr.service.spec.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/front/src/app/service/toastr/toastr.service.ts" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-<<<<<<< Updated upstream
-=======
-      <change beforePath="$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.ts" afterPath="$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.ts" />
-      <change beforePath="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.html" afterPath="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.html" />
-      <change beforePath="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.ts" afterPath="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.ts" />
-      <change beforePath="$PROJECT_DIR$/front/src/app/pages/home/home.component.html" afterPath="$PROJECT_DIR$/front/src/app/pages/home/home.component.html" />
-      <change beforePath="$PROJECT_DIR$/front/src/app/pages/home/home.component.scss" afterPath="$PROJECT_DIR$/front/src/app/pages/home/home.component.scss" />
-      <change beforePath="$PROJECT_DIR$/front/src/app/pages/home/home.component.ts" afterPath="$PROJECT_DIR$/front/src/app/pages/home/home.component.ts" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/app.module.ts" afterPath="$PROJECT_DIR$/front/src/app/app.module.ts" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/actual-season/actual-season.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/actual-season/actual-season.component.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/actual-season/actual-season.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/actual-season/actual-season.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/search-player/search-player.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/search-player/search-player.component.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/search-player/search-player.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/components/search-player/search-player.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/pages/home/home.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/pages/home/home.component.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/pages/home/home.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/pages/home/home.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/routes/routes.ts" afterPath="$PROJECT_DIR$/front/src/app/routes/routes.ts" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/model/form.model.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/model/globalStat.model.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/model/lifetime.model.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/model/payload.model.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/model/user.model.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/service/StatService/stats.service.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/service/StatService/stats.service.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/service/toastr/toastr.service.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/front/src/app/shared/service/toastr/toastr.service.ts" afterPath="" />
       <change beforePath="$PROJECT_DIR$/front/src/styles.scss" afterPath="$PROJECT_DIR$/front/src/styles.scss" />
->>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,22 +56,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-<<<<<<< Updated upstream
-    <leaf>
-      <file leaf-file-name="match-history.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-=======
     <leaf />
->>>>>>> Stashed changes
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -71,29 +87,13 @@
         <option value="$PROJECT_DIR$/discord-bot/index.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/front/package.json" />
+        <option value="$PROJECT_DIR$/front/src/styles.scss" />
         <option value="$PROJECT_DIR$/front/angular-cli.json" />
         <option value="$PROJECT_DIR$/front/src/app/home/home.component.ts" />
         <option value="$PROJECT_DIR$/front/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/front/src/app/service/toastr/toastr.service.ts" />
         <option value="$PROJECT_DIR$/front/src/environments/environment.local.ts" />
         <option value="$PROJECT_DIR$/front/src/app/service/stats.service.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/shared/model/payload.model.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/components/search-player/search-player.component.html" />
-        <option value="$PROJECT_DIR$/front/src/app/shared/model/form.model.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/shared/model/user.model.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/components/search-player/search-player.component.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/shared/model/globalStat.model.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/shared/model/lifetime.model.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.html" />
-        <option value="$PROJECT_DIR$/front/src/app/shared/model/matchistory.model.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/pages/home/home.component.html" />
-        <option value="$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.scss" />
-        <option value="$PROJECT_DIR$/front/src/app/pages/home/home.component.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.ts" />
-        <option value="$PROJECT_DIR$/front/src/app/pages/home/home.component.scss" />
-        <option value="$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.html" />
-        <option value="$PROJECT_DIR$/front/src/styles.scss" />
       </list>
     </option>
   </component>
@@ -108,15 +108,11 @@
     <handled-path value="$PROJECT_DIR$/discord-bot/node_modules" />
     <handled-path value="$PROJECT_DIR$/front/node_modules" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="419" />
-    <option name="y" value="345" />
-    <option name="width" value="1936" />
-    <option name="height" value="1437" />
-  </component>
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+    <option name="x" value="673" />
+    <option name="y" value="77" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -133,8 +129,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,7 +147,6 @@
               <item name="front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-<<<<<<< Updated upstream
             <path>
               <item name="fortnite_app" type="b2602c69:ProjectViewProjectNode" />
               <item name="fortnite_app" type="462c0819:PsiDirectoryNode" />
@@ -161,29 +154,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="fortnite_app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fortnite_app" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fortnite_app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fortnite_app" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="match-history" type="462c0819:PsiDirectoryNode" />
-            </path>
-=======
->>>>>>> Stashed changes
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,7 +167,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="H:/Project/Authentification System Node + Angular/21-12-2017" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -226,46 +202,56 @@
       <workItem from="1518429307324" duration="19475000" />
       <workItem from="1518518520108" duration="12485000" />
       <workItem from="1518705594490" duration="9545000" />
-      <workItem from="1523137673792" duration="601000" />
-      <workItem from="1523181333561" duration="2280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< Updated upstream
-    <option name="totallyTimeSpent" value="44042000" />
-=======
-    <option name="totallyTimeSpent" value="56128000" />
->>>>>>> Stashed changes
+    <option name="totallyTimeSpent" value="43399000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-<<<<<<< Updated upstream
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.120173365" sideWeight="0.77548003" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.120173365" sideWeight="0.77548003" order="0" side_tool="false" content_ui="combo" />
->>>>>>> Stashed changes
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930756" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51157665" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24918744" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3436754" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.168124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930756" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="500" y="92" width="1968" height="1216" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930756" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24718197" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51157665" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13217768" sideWeight="0.22451994" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34807256" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11940298" sideWeight="0.77548003" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24918744" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -292,43 +278,44 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/discord-bot/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitmodules">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -387,6 +374,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -397,8 +385,6 @@
         </state>
       </provider>
     </entry>
-=======
->>>>>>> Stashed changes
     <entry file="file://H:/Project/Authentification System Node + Angular/21-12-2017/front/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -455,7 +441,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/home/home.component.scss" />
+    <entry file="file://$PROJECT_DIR$/front/src/app/home/home.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://H:/Project/Authentification System Node + Angular/21-12-2017/front/src/app/routes/routes.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -484,7 +476,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/home/home.component.html" />
+    <entry file="file://$PROJECT_DIR$/front/src/app/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="369" column="0" lean-forward="false" selection-start-line="369" selection-start-column="0" selection-end-line="369" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/discord-bot/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -557,17 +562,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/service/toastr/toastr.service.ts" />
-    <entry file="file://$PROJECT_DIR$/front/src/environments/environment.local.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/service/stats.service.ts" />
-    <entry file="file://$PROJECT_DIR$/front/src/app/home/home.component.ts" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/front/src/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -576,223 +571,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
         <state relative-caret-position="690">
           <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-=======
-        <state relative-caret-position="529">
-          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
->>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/components/search-player/search-player.component.html">
+    <entry file="file://$PROJECT_DIR$/front/src/app/service/toastr/toastr.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
         <state relative-caret-position="391">
           <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-=======
-        <state relative-caret-position="437">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/shared/model/form.model.ts">
+    <entry file="file://$PROJECT_DIR$/front/src/app/home/home.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/shared/model/payload.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/shared/model/user.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/shared/model/globalStat.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding />
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="345">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-=======
-        <state relative-caret-position="575">
-          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/node_modules/@angular/core/src/event_emitter.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/components/search-player/search-player.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/shared/model/matchistory.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="52" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="21" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/shared/model/lifetime.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/components/global-stat/global-stat.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="143" column="62" lean-forward="false" selection-start-line="143" selection-start-column="62" selection-end-line="143" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#102#0" expanded="true" />
-            <element signature="e#1735#1972#0" expanded="false" />
-            <element signature="e#2007#2378#0" expanded="false" />
-            <element signature="e#2409#3294#0" expanded="false" />
-            <element signature="e#3323#4198#0" expanded="false" />
-            <element signature="e#3342#3486#0" expanded="false" />
-            <element signature="e#3507#3655#0" expanded="false" />
-            <element signature="e#3677#3827#0" expanded="false" />
-            <element signature="e#3852#4008#0" expanded="false" />
-            <element signature="e#4032#4186#0" expanded="false" />
-            <element signature="e#4229#5124#0" expanded="false" />
-            <element signature="e#4248#4396#0" expanded="false" />
-            <element signature="e#4417#4569#0" expanded="false" />
-            <element signature="e#4770#4930#0" expanded="false" />
-            <element signature="e#4954#5112#0" expanded="false" />
-          </folding>
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/pages/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="669">
+        <state relative-caret-position="165">
           <caret line="162" column="76" lean-forward="false" selection-start-line="162" selection-start-column="76" selection-end-line="162" selection-end-column="76" />
-          <folding />
-=======
-        <state relative-caret-position="414">
-          <caret line="95" column="20" lean-forward="true" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="20" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
->>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/pages/home/home.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="69">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/pages/home/home.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="63" column="67" lean-forward="false" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <element signature="e#369#1601#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.html">
+    <entry file="file://$PROJECT_DIR$/front/src/environments/environment.local.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-<<<<<<< Updated upstream
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/app/components/match-history/match-history.component.html">
+    <entry file="file://$PROJECT_DIR$/front/src/app/service/stats.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-=======
-          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
->>>>>>> Stashed changes
+        <state relative-caret-position="345">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
         </state>
       </provider>
     </entry>

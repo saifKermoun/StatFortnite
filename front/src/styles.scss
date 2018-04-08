@@ -1,58 +1,49 @@
-.space {
-  margin-bottom: 5%;
+
+/* You can add global styles to this file, and also import other style files */
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
 }
 
-.dtr-match-listing-2 .dtr-match-entry[data-standing='top'] {
-  border-left: 2px solid #455a64;
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-.dtr-match-listing-2 .dtr-match-entry {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  border-left: 2px solid transparent;
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
 }
 
-.dtr-match-listing-2 .dtr-match-entry .details {
-  overflow: hidden;
-  text-overflow: ellipsis;
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
 }
 
-.dtr-match-listing-2 .dtr-match-entry .stats {
-  margin-left: auto;
-  display: flex;
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
 
-.dtr-match-listing-2 .dtr-match-entry .details .title {
-  font-size: 15px;
-  display: block;
-  color: #FFFFFF;
-}
-
-.dtr-match-listing-2 .dtr-match-entry .details .subtitle {
-  font-size: 14px;
-  opacity: .54;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: #fafafa;
-}
-
-.dtr-match-listing-2 .dtr-match-entry .stats .stat {
-  text-align: right;
-  width: 100px;
-  text-transform: uppercase;
-}
-
-.dtr-match-listing-2 .dtr-match-entry .stats .stat .name {
-  font-size: 12px;
-  opacity: .54;
-  line-height: 1;
-  color: #fafafa;
-}
-
-.dtr-match-listing-2 .dtr-match-entry .stats .stat .value {
-  font-size: 20px;
-  display: block;
-  line-height: 1;
-  color: #FFF;
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }

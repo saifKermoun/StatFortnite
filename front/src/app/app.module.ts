@@ -8,25 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
-import { StatsService  } from './shared/service/StatService/stats.service';
+import { StatsService  } from './service/stats.service';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ErrorService} from "./shared/service/toastr/toastr.service";
+import {ErrorService} from "./service/toastr/toastr.service";
 import {routes} from "./routes/routes";
-import { HomeComponent } from './pages/home/home.component';
-import { GlobalStatComponent } from './components/global-stat/global-stat.component';
-import { SearchPlayerComponent } from './components/search-player/search-player.component';
-import { MatchHistoryComponent } from './components/match-history/match-history.component';
-import { ActualSeasonComponent } from './components/actual-season/actual-season.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    GlobalStatComponent,
-    SearchPlayerComponent,
-    MatchHistoryComponent,
-    ActualSeasonComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

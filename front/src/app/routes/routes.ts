@@ -1,5 +1,5 @@
 import {Routes, RouterModule} from "@angular/router";
-import {HomeComponent} from "../pages/home/home.component";
+import {HomeComponent} from "../home/home.component";
 
 
 const AppRoutes: Routes = [
