@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, SimpleChanges, Input} from '@angular/core';
+
 
 @Component({
   selector: 'app-match-history',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchHistoryComponent implements OnInit {
 
+  @Input() getMatchHistory: object;
+  $recentMatch: object;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.$recentMatch = changes.getMatchHistory.currentValue.payload;
+    console.log(changes)
   }
 
 }

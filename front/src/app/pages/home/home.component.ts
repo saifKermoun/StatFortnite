@@ -10,7 +10,9 @@ import { OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   readyToCharge = false;
-  putPayload = {};
+  putPayloadForm = {};
+  payloadMatchHistory = {};
+
   constructor() { }
 
   ngOnInit() { }
@@ -50,12 +52,16 @@ export class HomeComponent implements OnInit {
   };*/
 
   getFormData(payload) {
-    setTimeout(() => this.readyToCharge = true)
-    this.putPayload = {payload : payload, charged : true};
+    setTimeout(() => this.readyToCharge = true);
+    this.putPayloadForm = {payload : payload, charged : true};
   }
 
   getIfCanCharge(can) {
     this.readyToCharge = can;
+  }
+
+  getMatchHistory(payload) {
+    this.payloadMatchHistory = {payload : payload, charged : true};
   }
 
 }
