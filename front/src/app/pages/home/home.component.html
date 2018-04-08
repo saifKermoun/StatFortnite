@@ -1,43 +1,13 @@
-<div *ngIf="!username">
+<!--<div *ngIf="!username">
   <div class="container align-content-center" *ngIf="$resStat.error">
   <div class="col-12 align-content-center">
     <h1 class="text-center">{{$resStat.error}}</h1>
   </div>
-  <!-- /.col -->
+  &lt;!&ndash; /.col &ndash;&gt;
   </div>
-  <!-- /.container -->
+  &lt;!&ndash; /.container &ndash;&gt;
   <div class="container" *ngIf="!$resStat.error">
-  <div class="row flex-center">
-    <div class="col-6">
-      <h3>Rechercher par platform et username : </h3>
-      <hr>
-      <div class="card">
-        <div class="card-body">
-          <form class="form-inline">
-            <div class="md-form form-group">
-              <select name="platform" class="mdb-select dropdown-content select-dropdown" id="platform" [(ngModel)]="$inputs.platforms">
-                <option value="pc" selected>PC</option>
-                <option value="ps4">PS4</option>
-                <option value="xbox">Xbox</option>
-              </select>
-            </div>
-            <div class="md-form form-group">
 
-              <input mdbActive type="text" class="form-control" id="form10" name="username" mdbInputValidate [(ngModel)]="$inputs.username">
-              <label class="active" for="form10">Username</label>
-            </div>
-
-            <div class="md-form form-group">
-              <button class="btn btn-primary btn-sm waves-light" mdbRippleRadius (click)="getStat($inputs.platforms,$inputs.username)">Rechercher</button>
-            </div>
-
-          </form>
-
-        </div>
-        <!-- /.grid-body -->
-      </div>
-    </div>
-  </div>
   <br>
   <div class="row">
     <div class="col">
@@ -48,20 +18,20 @@
           <h4 class="white-text">{{$user.epicUserHandle}}  <span class="float-right white-text size-change">{{$lifeTimeStats.totWin}} Wins | {{$lifeTimeStats.totKill}} Kills | {{$lifeTimeStats.totMatches}} Games | {{$lifeTimeStats.timePlayed}} Played</span></h4>
         </div>
         <div class="card-body">
-          <div class="row"> <!-- START ROW -->
+          <div class="row"> &lt;!&ndash; START ROW &ndash;&gt;
             <div class="col-4">
-              <!--Table-->
+              &lt;!&ndash;Table&ndash;&gt;
               <table class="table">
-                <!--Table head-->
+                &lt;!&ndash;Table head&ndash;&gt;
                 <thead class="mdb-color darken-3">
                 <tr class="text-white">
                   <th><h4>SOLO</h4></th>
                   <th></th>
                 </tr>
                 </thead>
-                <!--Table head-->
+                &lt;!&ndash;Table head&ndash;&gt;
 
-                <!--Table body-->
+                &lt;!&ndash;Table body&ndash;&gt;
                 <tbody>
                 <tr>
                   <th scope="row">{{$SoloGame.kd.label}}</th>
@@ -86,21 +56,21 @@
                   <td>{{$SoloGame.matches.value}}</td>
                 </tr>
                 </tbody>
-                <!--Table body-->
+                &lt;!&ndash;Table body&ndash;&gt;
               </table>
             </div>
             <div class="col-4">
-              <!--Table-->
+              &lt;!&ndash;Table&ndash;&gt;
               <table class="table">
-                <!--Table head-->
+                &lt;!&ndash;Table head&ndash;&gt;
                 <thead class="mdb-color darken-3">
                 <tr class="text-white">
                   <th><h4>DUO</h4></th>
                   <th></th>
                 </tr>
                 </thead>
-                <!--Table head-->
-                <!--Table body-->
+                &lt;!&ndash;Table head&ndash;&gt;
+                &lt;!&ndash;Table body&ndash;&gt;
                 <tbody>
                 <tr>
                   <th scope="row">{{$DuoGame.kd.label}}</th>
@@ -125,21 +95,21 @@
                   <td>{{$DuoGame.matches.value}}</td>
                 </tr>
                 </tbody>
-                <!--Table body-->
+                &lt;!&ndash;Table body&ndash;&gt;
               </table>
             </div>
             <div class="col-4">
-              <!--Table-->
+              &lt;!&ndash;Table&ndash;&gt;
               <table class="table">
-                <!--Table head-->
+                &lt;!&ndash;Table head&ndash;&gt;
                 <thead class="mdb-color darken-3">
                 <tr class="text-white">
                   <th><h4>SQUAD</h4></th>
                   <th></th>
                 </tr>
                 </thead>
-                <!--Table head-->
-                <!--Table body-->
+                &lt;!&ndash;Table head&ndash;&gt;
+                &lt;!&ndash;Table body&ndash;&gt;
                 <tbody>
                 <tr>
                   <th scope="row">{{$SquadGame.kd.label}}</th>
@@ -163,14 +133,14 @@
                   <td>{{$SquadGame.matches.value}}</td>
                 </tr>
                 </tbody>
-                <!--Table body-->
+                &lt;!&ndash;Table body&ndash;&gt;
               </table>
             </div>
-          </div> <!-- END ROW -->
+          </div> &lt;!&ndash; END ROW &ndash;&gt;
         </div>
       </div>
     </div>
-    <!-- /.row -->
+    &lt;!&ndash; /.row &ndash;&gt;
   </div>
   <br>
   <div class="row">
@@ -219,9 +189,9 @@
         </div>
       </div>
     </div>
-    <!-- /.col-12 -->
+    &lt;!&ndash; /.col-12 &ndash;&gt;
   </div>
-  <!-- /.row -->
+  &lt;!&ndash; /.row &ndash;&gt;
   </div><br>
 </div>
 <div *ngIf="username">
@@ -230,7 +200,7 @@
 
       <h1 class="text-center">{{$resStat.error}}</h1>
     </div>
-    <!-- /.col -->
+    &lt;!&ndash; /.col &ndash;&gt;
   </div>
   <div class="container" *ngIf="!$resStat.error">
     <div class="row">
@@ -240,20 +210,20 @@
             <h4 class="white-text">{{$user.epicUserHandle}}  <span class="float-right white-text size-change">{{$lifeTimeStats.totWin}} Wins | {{$lifeTimeStats.totKill}} Kills | {{$lifeTimeStats.totMatches}} Games | {{$lifeTimeStats.timePlayed}} Played</span></h4>
           </div>
           <div class="card-body">
-            <div class="row"> <!-- START ROW -->
+            <div class="row"> &lt;!&ndash; START ROW &ndash;&gt;
               <div class="col-4">
-                <!--Table-->
+                &lt;!&ndash;Table&ndash;&gt;
                 <table class="table">
-                  <!--Table head-->
+                  &lt;!&ndash;Table head&ndash;&gt;
                   <thead class="mdb-color darken-3">
                   <tr class="text-white">
                     <th><h4>SOLO</h4></th>
                     <th></th>
                   </tr>
                   </thead>
-                  <!--Table head-->
+                  &lt;!&ndash;Table head&ndash;&gt;
 
-                  <!--Table body-->
+                  &lt;!&ndash;Table body&ndash;&gt;
                   <tbody>
                   <tr>
                     <th scope="row">{{$SoloGame.kd.label}}</th>
@@ -278,21 +248,21 @@
                     <td>{{$SoloGame.matches.value}}</td>
                   </tr>
                   </tbody>
-                  <!--Table body-->
+                  &lt;!&ndash;Table body&ndash;&gt;
                 </table>
               </div>
               <div class="col-4">
-                <!--Table-->
+                &lt;!&ndash;Table&ndash;&gt;
                 <table class="table">
-                  <!--Table head-->
+                  &lt;!&ndash;Table head&ndash;&gt;
                   <thead class="mdb-color darken-3">
                   <tr class="text-white">
                     <th><h4>DUO</h4></th>
                     <th></th>
                   </tr>
                   </thead>
-                  <!--Table head-->
-                  <!--Table body-->
+                  &lt;!&ndash;Table head&ndash;&gt;
+                  &lt;!&ndash;Table body&ndash;&gt;
                   <tbody>
                   <tr>
                     <th scope="row">{{$DuoGame.kd.label}}</th>
@@ -317,21 +287,21 @@
                     <td>{{$DuoGame.matches.value}}</td>
                   </tr>
                   </tbody>
-                  <!--Table body-->
+                  &lt;!&ndash;Table body&ndash;&gt;
                 </table>
               </div>
               <div class="col-4">
-                <!--Table-->
+                &lt;!&ndash;Table&ndash;&gt;
                 <table class="table">
-                  <!--Table head-->
+                  &lt;!&ndash;Table head&ndash;&gt;
                   <thead class="mdb-color darken-3">
                   <tr class="text-white">
                     <th><h4>SQUAD</h4></th>
                     <th></th>
                   </tr>
                   </thead>
-                  <!--Table head-->
-                  <!--Table body-->
+                  &lt;!&ndash;Table head&ndash;&gt;
+                  &lt;!&ndash;Table body&ndash;&gt;
                   <tbody>
                   <tr>
                     <th scope="row">{{$SquadGame.kd.label}}</th>
@@ -355,15 +325,27 @@
                     <td>{{$SquadGame.matches.value}}</td>
                   </tr>
                   </tbody>
-                  <!--Table body-->
+                  &lt;!&ndash;Table body&ndash;&gt;
                 </table>
               </div>
-            </div> <!-- END ROW -->
+            </div> &lt;!&ndash; END ROW &ndash;&gt;
           </div>
         </div>
       </div>
-      <!-- /.row -->
+      &lt;!&ndash; /.row &ndash;&gt;
     </div>
-    <!-- /.row -->
+    &lt;!&ndash; /.row &ndash;&gt;
   </div>
+</div>-->
+<div class="container">
+
+  <!-- SEARCH -->
+
+  <app-search-player (formData)="getFormData($event)"></app-search-player>
+
+  <!-- GLOBAL STAT -->
+  <app-global-stat [putFormInput]="putPayload" *ngIf="readyToCharge" (readyToCharge)="getIfCanCharge($event)"></app-global-stat>
+  <!-- ACTUAL SEASON -->
+
+  <!-- MATCH HISTORY -->
 </div>
