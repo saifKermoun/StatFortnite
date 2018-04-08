@@ -17,6 +17,7 @@ export class GlobalStatComponent implements OnInit {
 
   @Input() putFormInput: FormModel;
   @Output() readyToCharge = new EventEmitter<boolean>();
+  @Output() matchHistory = new EventEmitter<object>();
 
   $resStat = new PayloadModel;
   $lifeTimeStats = new LifetimeModel;
@@ -140,7 +141,7 @@ export class GlobalStatComponent implements OnInit {
             }
           };
 
-          /*this.$recentMatch = this.$resStat.recentMatches;*/
+          this.matchHistory.emit(this.$resStat.recentMatches);
         } else {
           this.$resStat = res;
         }
