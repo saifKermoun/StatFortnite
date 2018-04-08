@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../environments/environment.local';
+import {environment} from '../../../../environments/environment.local';
 
 @Injectable()
 export class StatsService {
