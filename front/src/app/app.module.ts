@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {ChartsModule} from "ng2-charts";
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { GlobalStatComponent } from './components/global-stat/global-stat.compon
 import { SearchPlayerComponent } from './components/search-player/search-player.component';
 import { MatchHistoryComponent } from './components/match-history/match-history.component';
 import { ActualSeasonComponent } from './components/actual-season/actual-season.component';
+
 
 @NgModule({
   declarations: [
@@ -37,8 +38,9 @@ import { ActualSeasonComponent } from './components/actual-season/actual-season.
     MDBBootstrapModule,
     routes,
     CommonModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    BrowserAnimationsModule ,
+    ToastrModule.forRoot(),
+    HomeComponent
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [StatsService, ErrorService],
