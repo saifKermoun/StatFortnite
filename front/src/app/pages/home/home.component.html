@@ -1,0 +1,15 @@
+
+<div class="container">
+
+  <!-- SEARCH -->
+  <app-search-player (formData)="getFormData($event)"></app-search-player>
+
+  <!-- GLOBAL STAT -->
+  <app-global-stat [putFormInput]="putPayloadForm" *ngIf="readyToCharge" (readyToCharge)="getIfCanCharge($event)" (matchHistory)="getMatchHistory($event)" (actualSeasonStat)="getActualSeasonStats($event)"></app-global-stat>
+
+  <!-- ACTUAL SEASON -->
+  <app-actual-season [getActualSeasonStats]="payloadActualSeason" *ngIf="readyToCharge"></app-actual-season>
+  <!-- MATCH HISTORY -->
+  <app-match-history [getMatchHistory]="payloadMatchHistory" *ngIf="readyToCharge"></app-match-history>
+
+</div>

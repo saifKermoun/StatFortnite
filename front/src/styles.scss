@@ -1,0 +1,58 @@
+.space {
+  margin-bottom: 5%;
+}
+
+.dtr-match-listing-2 .dtr-match-entry[data-standing='top'] {
+  border-left: 2px solid #455a64;
+}
+
+.dtr-match-listing-2 .dtr-match-entry {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-left: 2px solid transparent;
+}
+
+.dtr-match-listing-2 .dtr-match-entry .details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dtr-match-listing-2 .dtr-match-entry .stats {
+  margin-left: auto;
+  display: flex;
+}
+
+.dtr-match-listing-2 .dtr-match-entry .details .title {
+  font-size: 15px;
+  display: block;
+  color: #FFFFFF;
+}
+
+.dtr-match-listing-2 .dtr-match-entry .details .subtitle {
+  font-size: 14px;
+  opacity: .54;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #fafafa;
+}
+
+.dtr-match-listing-2 .dtr-match-entry .stats .stat {
+  text-align: right;
+  width: 100px;
+  text-transform: uppercase;
+}
+
+.dtr-match-listing-2 .dtr-match-entry .stats .stat .name {
+  font-size: 12px;
+  opacity: .54;
+  line-height: 1;
+  color: #fafafa;
+}
+
+.dtr-match-listing-2 .dtr-match-entry .stats .stat .value {
+  font-size: 20px;
+  display: block;
+  line-height: 1;
+  color: #FFF;
+}
