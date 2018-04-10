@@ -35,7 +35,7 @@ import { ActualSeasonComponent } from './components/actual-season/actual-season.
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
-    MDBBootstrapModule,
+    MDBBootstrapModule.forRoot(),
     routes,
     CommonModule,
     BrowserAnimationsModule ,

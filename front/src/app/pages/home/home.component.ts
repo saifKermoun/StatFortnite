@@ -1,17 +1,17 @@
 import {Component, NgModule, OnInit } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule, MatSelectModule} from '@angular/material';
+import {ToastrService} from "ngx-toastr";
 
 @NgModule({
-  imports : [MatButtonModule],
-  exports : [MatButtonModule],
+  imports : [MatButtonModule, MatSelectModule],
+  exports : [MatButtonModule, MatSelectModule],
 })
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
@@ -25,14 +25,18 @@ export class HomeComponent implements OnInit {
     charged : false
   };
 
-  constructor() { }
+  constructor(private toastrService: ToastrService) { }
 
   ngOnInit() { }
 
 
   getFormData(payload) {
-    setTimeout(() => this.readyToCharge = true);
-    this.putPayloadForm = {payload : payload, charged : true};
+    if(payload.username != "") {
+      setTimeout(() => this.readyToCharge = true);
+      this.putPayloadForm = {payload : payload, charged : true};
+    }else {
+      this.toastrService.info("Le champ username est vide", "Info champ :")
+    }
   }
 
   getIfCanCharge(can) {

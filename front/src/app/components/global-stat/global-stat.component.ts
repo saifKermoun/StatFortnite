@@ -35,7 +35,6 @@ export class GlobalStatComponent implements OnInit {
   duo = 'p10';
   squad = 'p9';
 
-  //readyToCharge: boolean;
 
   constructor(private statService: StatsService, private toastrService: ToastrService){ }
 
@@ -146,14 +145,15 @@ export class GlobalStatComponent implements OnInit {
           this.actualSeasonStat.emit(this.$resStat.stats);
 
         } else {
-          this.$resStat = res;
+          this.readyToCharge.emit(false);
+          this.toastrService.error('Player not found !');
         }
       },
       err => (
         this.toastrService.warning('Server down', 'Le serveur est éteint.'),
         this.emitChange()
-      )
-      //() => console.log(this.$SoloGame.kd, 'done')
+      ),
+      () => console.log(this.$resStat, 'done')
     );
   }
 

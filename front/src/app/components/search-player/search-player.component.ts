@@ -10,6 +10,7 @@ import {FormModel} from "../../shared/model/form.model";
 export class SearchPlayerComponent implements OnInit {
 
   user = new FormModel;
+  selected = "pc";
 
   @Output() formData = new EventEmitter<FormModel>();
 
