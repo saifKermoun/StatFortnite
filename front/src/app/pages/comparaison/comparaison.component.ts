@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StatsService} from "../../shared/service/StatService/stats.service";
 
 @Component({
   selector: 'app-comparaison',
@@ -7,13 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComparaisonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private statService: StatsService) { }
 
   ngOnInit() {
   }
 
   getFormData(payload) {
-    console.log(payload);
+   this.getStatsComparaison(payload)
+  }
+
+  getStatsComparaison(payload) {
+    this.statService.getComparaisonStats(payload).subscribe(res => {
+      console.log(res)
+    },
+      err => console.error(err),
+      () => console.log('done.')
+    )
   }
 
 }

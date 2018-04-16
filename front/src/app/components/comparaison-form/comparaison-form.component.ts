@@ -18,6 +18,7 @@ export class ComparaisonFormComponent implements OnInit {
     player1: '',
     player2: '',
     player3: ''
+
   };
 
   @Output() putPayloadCamparaison = new EventEmitter();
@@ -47,6 +48,7 @@ export class ComparaisonFormComponent implements OnInit {
         player1: player1,
         player2: player2,
         player3: player3
+
       };
 
       this.putPayloadCamparaison.emit(this.comparaisonPayload);

@@ -24,6 +24,7 @@ import { TotalStatsUserComponent } from './components/total-stats-user/total-sta
 import { MenuComponent } from './layout/menu/menu.component';
 import { ComparaisonComponent } from './pages/comparaison/comparaison.component';
 import { ComparaisonFormComponent } from './components/comparaison-form/comparaison-form.component';
+import { ComparaisonStatsComponent } from './components/comparaison-stats/comparaison-stats.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ComparaisonFormComponent } from './components/comparaison-form/comparai
     TotalStatsUserComponent,
     MenuComponent,
     ComparaisonComponent,
-    ComparaisonFormComponent
+    ComparaisonFormComponent,
+    ComparaisonStatsComponent
   ],
   imports: [
     BrowserModule,

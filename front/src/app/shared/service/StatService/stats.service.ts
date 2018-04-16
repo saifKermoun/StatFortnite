@@ -16,4 +16,21 @@ export class StatsService {
     return this.http.get(newUrl);
   }
 
+  getComparaisonStats(payload): Observable<any> {
+    if(payload.player1 === '') {
+      payload.player1 = "KO";
+    }
+    if(payload.player2 === '') {
+      payload.player2 = "KO";
+    }
+    if(payload.player3 === '') {
+      payload.player3 = "KO";
+    }
+
+    console.log(payload);
+
+    const newUrl = this.URL + 'comp/' + payload.platform + '/' + payload.self + '/' + payload.player1 + '/' + payload.player2 + '/' + payload.player3;
+    return this.http.get(newUrl);
+  }
+
 }
