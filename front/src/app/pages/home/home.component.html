@@ -2,9 +2,11 @@
   <!-- SEARCH -->
   <app-search-player (formData)="getFormData($event)"></app-search-player>
   <br>
+
+  <app-total-stats-user [getTotalStatUser]="payloadTotalStatUser" *ngIf="readyToCharge"></app-total-stats-user>
+
   <!-- TABS -->
   <mat-tab-group *ngIf="readyToCharge">
-    <mat-tab label="Stat Week"><app-stats-week></app-stats-week></mat-tab>
     <mat-tab label="Global Stat"> <app-global-stat [getGlobalSeasonStats]="payloadGlobalSeason" *ngIf="readyToCharge"></app-global-stat></mat-tab>
     <mat-tab label="Actual Season"><app-actual-season [getActualSeasonStats]="payloadActualSeason" *ngIf="readyToCharge"></app-actual-season></mat-tab>
     <mat-tab label="Match History"><app-match-history [getMatchHistory]="payloadMatchHistory" *ngIf="readyToCharge"></app-match-history></mat-tab>

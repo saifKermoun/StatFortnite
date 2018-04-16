@@ -4,10 +4,7 @@ import {MatButtonModule, MatSelectModule, MatTabsModule} from '@angular/material
 import {ToastrService} from "ngx-toastr";
 import {ServerService} from "../../shared/service/Server/server.service";
 import {StatsService} from "../../shared/service/StatService/stats.service";
-@NgModule({
-  imports : [MatButtonModule, MatSelectModule, MatTabsModule],
-  exports : [MatButtonModule, MatSelectModule, MatTabsModule],
-})
+
 
 @Component({
   selector: 'app-home',
@@ -15,9 +12,19 @@ import {StatsService} from "../../shared/service/StatService/stats.service";
   styleUrls: ['./home.component.scss'],
   providers: [ServerService]
 })
+
+@NgModule ({
+  imports : [MatButtonModule, MatSelectModule, MatTabsModule],
+  exports : [MatButtonModule, MatSelectModule, MatTabsModule],
+})
+
 export class HomeComponent implements OnInit {
 
   readyToCharge = false;
+  payloadTotalStatUser = {
+    userName: '',
+    lifetime: {}
+  };
   payloadMatchHistory = {};
   payloadActualSeason = {
     curr_p2 : {},
@@ -38,7 +45,6 @@ export class HomeComponent implements OnInit {
     this.serverService.getInfoServer().subscribe(
       res => {
           this.status = res;
-        this.getStat('pc', 'haadokenn')
       },
       err => (
           this.toastrService.warning('Le server est down, veuillez patientez quelques instants.'),
@@ -62,32 +68,12 @@ export class HomeComponent implements OnInit {
       res => {
         if (!res.error) {
 
-          //TODO: User + Lifetime to complete,
           //TODO: stats joueur sur l'ensemble de la semaine, (All,solo, duo, squad),
           //TODO: stats joueur sur l'ensemble du mois, (All,solo, duo, squad)
 
           //TODO: Comparaison sur les stats globals, et par type de game, sur X joueur
 
-         /* this.$resStat = res;
-          console.log(this.$resStat);
-          this.$user =  {
-            accountId : res.accountId,
-            platformID: res.accountId,
-            platformName : res.platformName,
-            platformNameLong : res.platformNameLong,
-            epicUserHandle : res.epicUserHandle
-          };
-
-          this.$lifeTimeStats = {
-            totWin : res.lifeTimeStats[8],
-            totMatches : res.lifeTimeStats[7],
-            totKill : res.lifeTimeStats[10],
-            totKD : res.lifeTimeStats[11],
-            totWPerc : res.lifeTimeStats[9],
-            totScore : res.lifeTimeStats[6],
-            timePlayed : res.lifeTimeStats[13],
-          };
-*/
+          this.getTotalStatUser(res.epicUserHandle, res['lifeTimeStats']);
           this.getGlobalSeasonStats(res['stats']);
 
           this.getActualSeasonStats(res['stats']);
@@ -120,5 +106,13 @@ export class HomeComponent implements OnInit {
 
   getMatchHistory(payload) {
     this.payloadMatchHistory = {payload :  payload};
+    }
+
+    getTotalStatUser(username, payloadLF) {
+    this.payloadTotalStatUser = {
+      userName: username,
+      lifetime: payloadLF
+    }
+
     }
 }

@@ -20,6 +20,7 @@ import { MatchHistoryComponent } from './components/match-history/match-history.
 import { ActualSeasonComponent } from './components/actual-season/actual-season.component';
 import {ServerService} from "./shared/service/Server/server.service";
 import { StatsWeekComponent } from './components/stats-week/stats-week.component';
+import { TotalStatsUserComponent } from './components/total-stats-user/total-stats-user.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { StatsWeekComponent } from './components/stats-week/stats-week.component
     SearchPlayerComponent,
     MatchHistoryComponent,
     ActualSeasonComponent,
-    StatsWeekComponent
+    StatsWeekComponent,
+    TotalStatsUserComponent
   ],
   imports: [
     BrowserModule,
