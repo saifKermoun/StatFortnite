@@ -48,9 +48,10 @@ export class HomeComponent implements OnInit {
       },
       err => (
           this.toastrService.warning('Le server est down, veuillez patientez quelques instants.'),
-          this.readyToCharge = false
+          this.readyToCharge = false,
+          console.log(err)
       ),
-      () => console.log(this.status,'done')
+      // () => ()
     );
   }
 
