@@ -1,0 +1,46 @@
+<div class="row flex-center">
+  <div class="col-10">
+    <h3>Rechercher jusqu'à 3 joueurs avec qui vous voulez vous comparez</h3>
+    <hr>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-inline">
+          <div class="md-form form-group">
+            <mat-form-field>
+              <mat-select [(value)]="selected" #platform>
+                <mat-option value="pc">PC</mat-option>
+                <mat-option value="ps4">PS4</mat-option>
+                <mat-option value="xbox">XBOX</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="md-form form-group">
+            <input mdbActive type="text" class="form-control" id="self" name="player1" mdbInputValidate #self required>
+            <label class="active" for="self">Vous</label>
+          </div>
+
+          <div class="md-form form-group">
+            <input mdbActive type="text" class="form-control" id="player1" name="player1" mdbInputValidate #player1 required>
+            <label class="active" for="player1">Joueur 1</label>
+          </div>
+          <div class="md-form form-group">
+            <input mdbActive type="text" class="form-control" id="player2" name="player2" mdbInputValidate #player2>
+            <label class="active" for="player2">Joueur 2</label>
+          </div>
+
+          <div class="md-form form-group">
+            <input mdbActive type="text" class="form-control" id="player3" name="player3" mdbInputValidate #player3>
+            <label class="active" for="player3">Joueur 3</label>
+          </div>
+
+          <div class="md-form form-group">
+            <button class="btn btn-primary btn-sm waves-light" mdbRippleRadius (click)="putFormData(platform.value, self.value, player1.value, player2.value, player3.value)">Rechercher</button>
+          </div>
+
+        </form>
+
+      </div>
+      <!-- /.grid-body -->
+    </div>
+  </div>
+</div>

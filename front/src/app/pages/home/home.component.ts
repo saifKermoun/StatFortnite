@@ -5,6 +5,10 @@ import {ToastrService} from "ngx-toastr";
 import {ServerService} from "../../shared/service/Server/server.service";
 import {StatsService} from "../../shared/service/StatService/stats.service";
 
+@NgModule ({
+  imports : [MatButtonModule, MatSelectModule, MatTabsModule],
+  exports : [MatButtonModule, MatSelectModule, MatTabsModule],
+})
 
 @Component({
   selector: 'app-home',
@@ -13,10 +17,6 @@ import {StatsService} from "../../shared/service/StatService/stats.service";
   providers: [ServerService]
 })
 
-@NgModule ({
-  imports : [MatButtonModule, MatSelectModule, MatTabsModule],
-  exports : [MatButtonModule, MatSelectModule, MatTabsModule],
-})
 
 export class HomeComponent implements OnInit {
 

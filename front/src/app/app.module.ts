@@ -21,6 +21,9 @@ import { ActualSeasonComponent } from './components/actual-season/actual-season.
 import {ServerService} from "./shared/service/Server/server.service";
 import { StatsWeekComponent } from './components/stats-week/stats-week.component';
 import { TotalStatsUserComponent } from './components/total-stats-user/total-stats-user.component';
+import { MenuComponent } from './layout/menu/menu.component';
+import { ComparaisonComponent } from './pages/comparaison/comparaison.component';
+import { ComparaisonFormComponent } from './components/comparaison-form/comparaison-form.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { TotalStatsUserComponent } from './components/total-stats-user/total-sta
     MatchHistoryComponent,
     ActualSeasonComponent,
     StatsWeekComponent,
-    TotalStatsUserComponent
+    TotalStatsUserComponent,
+    MenuComponent,
+    ComparaisonComponent,
+    ComparaisonFormComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,8 @@ import { TotalStatsUserComponent } from './components/total-stats-user/total-sta
     CommonModule,
     BrowserAnimationsModule ,
     ToastrModule.forRoot(),
-    HomeComponent
+    HomeComponent,
+    MenuComponent
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [StatsService, ErrorService, ServerService],
