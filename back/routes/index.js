@@ -38,4 +38,8 @@ router.get('/:platform/:username', function(req, res, next) {
     });
 });
 
+router.get('/info', function(req, res, next) {
+    res.send({info: 'On', status: res.statusCode});
+});
+
 module.exports = router;

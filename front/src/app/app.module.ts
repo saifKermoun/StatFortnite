@@ -18,6 +18,8 @@ import { GlobalStatComponent } from './components/global-stat/global-stat.compon
 import { SearchPlayerComponent } from './components/search-player/search-player.component';
 import { MatchHistoryComponent } from './components/match-history/match-history.component';
 import { ActualSeasonComponent } from './components/actual-season/actual-season.component';
+import {ServerService} from "./shared/service/Server/server.service";
+import { StatsWeekComponent } from './components/stats-week/stats-week.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { ActualSeasonComponent } from './components/actual-season/actual-season.
     GlobalStatComponent,
     SearchPlayerComponent,
     MatchHistoryComponent,
-    ActualSeasonComponent
+    ActualSeasonComponent,
+    StatsWeekComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ import { ActualSeasonComponent } from './components/actual-season/actual-season.
     HomeComponent
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [StatsService, ErrorService],
+  providers: [StatsService, ErrorService, ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

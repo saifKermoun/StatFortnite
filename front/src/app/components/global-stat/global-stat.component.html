@@ -5,7 +5,7 @@
     <hr>
     <div class="card">
       <div class="card-header unique-color-dark">
-        <h4 class="white-text">{{$user.epicUserHandle}}  <span class="float-right white-text size-change">{{$lifeTimeStats.totWin}} Wins | {{$lifeTimeStats.totKill}} Kills | {{$lifeTimeStats.totMatches}} Games | {{$lifeTimeStats.timePlayed}} Played</span></h4>
+        <!--<h4 class="white-text">{{$user.epicUserHandle}}  <span class="float-right white-text size-change">{{$lifeTimeStats.totWin?.value}} Wins | {{$lifeTimeStats.totKill?.value}} Kills | {{$lifeTimeStats.totMatches?.value}} Games | {{$lifeTimeStats.timePlayed?.value}} Played</span></h4>-->
       </div>
       <div class="card-body">
         <div class="row"> <!-- START ROW -->
@@ -24,26 +24,26 @@
               <!--Table body-->
               <tbody>
               <tr>
-                <th scope="row">{{$SoloGame.kd.label}}</th>
-                <td>{{$SoloGame.kd.value}}</td>
+                <th scope="row">{{solo.kd?.label}}</th>
+                <td>{{solo.kd?.value}}</td>
 
               </tr>
               <tr>
-                <th scope="row">{{$SoloGame.top1.label}}</th>
-                <td>{{$SoloGame.top1.value}}</td>
+                <th scope="row">{{solo.top1?.label}}</th>
+                <td>{{solo.top1?.value}}</td>
 
               </tr>
               <tr>
-                <th scope="row">{{$SoloGame.kills.label}}</th>
-                <td>{{$SoloGame.kills.value}}</td>
+                <th scope="row">{{solo.kills?.label}}</th>
+                <td>{{solo.kills?.value}}</td>
               </tr>
               <tr>
-                <th scope="row">{{$SoloGame.winRatio.label}}</th>
-                <td>{{$SoloGame.winRatio.value}}</td>
+                <th scope="row">{{solo.winRatio?.label}}</th>
+                <td>{{solo.winRatio?.value}}</td>
               </tr>
               <tr>
-                <th scope="row">{{$SoloGame.matches.label}}</th>
-                <td>{{$SoloGame.matches.value}}</td>
+                <th scope="row">{{solo.matches?.label}}</th>
+                <td>{{solo.matches?.value}}</td>
               </tr>
               </tbody>
               <!--Table body-->
@@ -63,26 +63,26 @@
               <!--Table body-->
               <tbody>
               <tr>
-                <th scope="row">{{$DuoGame.kd.label}}</th>
-                <td>{{$DuoGame.kd.value}}</td>
+                <th scope="row">{{duo.kd?.label}}</th>
+                <td>{{duo.kd?.value}}</td>
 
               </tr>
               <tr>
-                <th scope="row">{{$DuoGame.top1.label}}</th>
-                <td>{{$DuoGame.top1.value}}</td>
+                <th scope="row">{{duo.top1?.label}}</th>
+                <td>{{duo.top1?.value}}</td>
 
               </tr>
               <tr>
-                <th scope="row">{{$DuoGame.kills.label}}</th>
-                <td>{{$DuoGame.kills.value}}</td>
+                <th scope="row">{{duo.kills?.label}}</th>
+                <td>{{duo.kills?.value}}</td>
               </tr>
               <tr>
-                <th scope="row">{{$DuoGame.winRatio.label}}</th>
-                <td>{{$DuoGame.winRatio.value}}</td>
+                <th scope="row">{{duo.winRatio?.label}}</th>
+                <td>{{duo.winRatio?.value}}</td>
               </tr>
               <tr>
-                <th scope="row">{{$DuoGame.matches.label}}</th>
-                <td>{{$DuoGame.matches.value}}</td>
+                <th scope="row">{{duo.matches?.label}}</th>
+                <td>{{duo.matches?.value}}</td>
               </tr>
               </tbody>
               <!--Table body-->
@@ -102,25 +102,25 @@
               <!--Table body-->
               <tbody>
               <tr>
-                <th scope="row">{{$SquadGame.kd.label}}</th>
-                <td>{{$SquadGame.kd.value}}</td>
+                <th scope="row">{{squad.kd?.label}}</th>
+                <td>{{squad.kd?.value}}</td>
               </tr>
               <tr>
-                <th scope="row">{{$SquadGame.top1.label}}</th>
-                <td>{{$SquadGame.top1.value}}</td>
+                <th scope="row">{{squad.top1?.label}}</th>
+                <td>{{squad.top1?.value}}</td>
 
               </tr>
               <tr>
-                <th scope="row">{{$SquadGame.kills.label}}</th>
-                <td>{{$SquadGame.kills.value}}</td>
+                <th scope="row">{{squad.kills?.label}}</th>
+                <td>{{squad.kills?.value}}</td>
               </tr>
               <tr>
-                <th scope="row">{{$SquadGame.winRatio.label}}</th>
-                <td>{{$SquadGame.winRatio.value}}</td>
+                <th scope="row">{{squad.winRatio?.label}}</th>
+                <td>{{squad.winRatio?.value}}</td>
               </tr>
               <tr>
-                <th scope="row">{{$SquadGame.matches.label}}</th>
-                <td>{{$SquadGame.matches.value}}</td>
+                <th scope="row">{{squad.matches?.label}}</th>
+                <td>{{squad.matches?.value}}</td>
               </tr>
               </tbody>
               <!--Table body-->

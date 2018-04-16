@@ -1,15 +1,12 @@
-
 <div class="container">
-
   <!-- SEARCH -->
   <app-search-player (formData)="getFormData($event)"></app-search-player>
-
-  <!-- GLOBAL STAT -->
-  <app-global-stat [putFormInput]="putPayloadForm" *ngIf="readyToCharge" (readyToCharge)="getIfCanCharge($event)" (matchHistory)="getMatchHistory($event)" (actualSeasonStat)="getActualSeasonStats($event)"></app-global-stat>
-
-  <!-- ACTUAL SEASON -->
-  <app-actual-season [getActualSeasonStats]="payloadActualSeason" *ngIf="readyToCharge"></app-actual-season>
-  <!-- MATCH HISTORY -->
-  <app-match-history [getMatchHistory]="payloadMatchHistory" *ngIf="readyToCharge"></app-match-history>
-
+  <br>
+  <!-- TABS -->
+  <mat-tab-group *ngIf="readyToCharge">
+    <mat-tab label="Stat Week"><app-stats-week></app-stats-week></mat-tab>
+    <mat-tab label="Global Stat"> <app-global-stat [getGlobalSeasonStats]="payloadGlobalSeason" *ngIf="readyToCharge"></app-global-stat></mat-tab>
+    <mat-tab label="Actual Season"><app-actual-season [getActualSeasonStats]="payloadActualSeason" *ngIf="readyToCharge"></app-actual-season></mat-tab>
+    <mat-tab label="Match History"><app-match-history [getMatchHistory]="payloadMatchHistory" *ngIf="readyToCharge"></app-match-history></mat-tab>
+  </mat-tab-group>
 </div>

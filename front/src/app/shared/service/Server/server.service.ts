@@ -5,15 +5,15 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environments/environment.local';
 
 @Injectable()
-export class StatsService {
+export class ServerService {
 
   URL = environment.apiUrl + environment.backPort + '/';
 
   constructor(private http: HttpClient) { }
 
-  getStat(platform, username): Observable<any> {
-    const newUrl = this.URL + platform + '/' + username;
+
+  getInfoServer() {
+    const newUrl = this.URL + 'info';
     return this.http.get(newUrl);
   }
-
 }
