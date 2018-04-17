@@ -25,6 +25,11 @@ import { MenuComponent } from './layout/menu/menu.component';
 import { ComparaisonComponent } from './pages/comparaison/comparaison.component';
 import { ComparaisonFormComponent } from './components/comparaison-form/comparaison-form.component';
 import { ComparaisonStatsComponent } from './components/comparaison-stats/comparaison-stats.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { CompSelfComponent } from './components/comparaison-blocks/comp-self/comp-self.component';
+import { CompPlayerOneComponent } from './components/comparaison-blocks/comp-player-one/comp-player-one.component';
+import { CompPlayerTwoComponent } from './components/comparaison-blocks/comp-player-two/comp-player-two.component';
+import { CompPlayerThreeComponent } from './components/comparaison-blocks/comp-player-three/comp-player-three.component';
 
 
 @NgModule({
@@ -40,7 +45,12 @@ import { ComparaisonStatsComponent } from './components/comparaison-stats/compar
     MenuComponent,
     ComparaisonComponent,
     ComparaisonFormComponent,
-    ComparaisonStatsComponent
+    ComparaisonStatsComponent,
+    LoadingComponent,
+    CompSelfComponent,
+    CompPlayerOneComponent,
+    CompPlayerTwoComponent,
+    CompPlayerThreeComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var request = require('request');
 var router = express.Router();
-var dateFormat = require('dateformat');
+var rp = require('request-promise');
 
 
 const Url = "https://api.fortnitetracker.com/v1/profile/";
@@ -36,8 +36,8 @@ var p3 = {
 };
 
 var $body;
-var $payload = [];
 
+var flag = true;
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -68,81 +68,97 @@ router.get('/info', function(req, res, next) {
 
 //TODO : fajouter du async et await pour que les payload sois bien implémenter.
 
-router.get('/comp/:platform/:self/:p1/:p2/:p3', function(req, res, next) {
 
+
+router.get('/comp/:platform/:self/:p1/:p2/:p3', function(req, res, next) {
+    var $payload = [];
     var platform, self, p1, p2, p3;
 
     platform = req.params.platform;
-
     self = req.params.self;
     p1 = req.params.p1;
     p2 = req.params.p2;
     p3 = req.params.p3;
 
-    var urlSelf = Url + platform + '/' + self;
-    var urlP1 = Url + platform + '/' + p1;
-    var urlP2 = Url + platform + '/' + p2;
-    var urlP3 = Url + platform + '/' + p3;
+    var options = {
+        headers : {
+            'TRN-Api-Key' : ApiKey
+        },
+        json: true
+    };
+    var uriSelf = Url + platform + '/' + self;
+    var uriP1 = Url + platform + '/' + p1;
+    var uriP2 = Url + platform + '/' + p2;
+    var uriP3 = Url + platform + '/' + p3;
 
-    request.get(urlSelf, options, function (err, response, body) {
-        if (err) { return console.log(err); }
-        $body = JSON.parse(body);
-        this.self = {
-            username : $body.epicUserHandle,
-            stats: $body.stats,
-            lifeTimeStats: $body.lifeTimeStats
-        };
-        $payload.push({self : this.self})
-    });
+    if(self !== 'KO') {
+        rp(uriSelf,options)
+            .then(function(repos) {
+                this.self = {
+                    username : repos.epicUserHandle,
+                    stats: repos.stats,
+                    lifeTimeStats: repos.lifeTimeStats
+                };
+                $payload['0'] = this.self;
 
-    if(p1 !== "KO") {
-
-        request.get(urlP1, options, function (err, response, body) {
-            if (err) { return console.log(err); }
-            $body = JSON.parse(body);
-            this.p1 = {
-                username : $body.epicUserHandle,
-                stats: $body.stats,
-                lifeTimeStats: $body.lifeTimeStats
-            };
-            $payload.push({p1 : this.p1})
-
-        });
+            })
+            .catch(function(err) {
+                console.log(err.message)
+            });
     }
 
-    if(p2 !== "KO") {
-        request.get(urlP2, options, function (err, response, body) {
-            if (err) { return console.log(err); }
-            $body = JSON.parse(body);
-            this.p2 = {
-                username : $body.epicUserHandle,
-                stats: $body.stats,
-                lifeTimeStats: $body.lifeTimeStats
-            };
-            $payload.push({p2: this.p2})
-
-        });
+    if(p1 !== 'KO') {
+        rp(uriP1,options)
+            .then(function(repos) {
+                this.p1 = {
+                    username : repos.epicUserHandle,
+                    stats: repos.stats,
+                    lifeTimeStats: repos.lifeTimeStats
+                };
+                $payload['1'] = this.p1;
+                console.log('done p1')
+            })
+            .catch(function(err) {
+                console.log(err.message)
+            });
     }
 
-    if(p3 !== "KO") {
-        request.get(urlP3, options, function (err, response, body) {
-            if (err) { return console.log(err); }
-            $body = JSON.parse(body);
-            this.p3 = {
-                username : $body.epicUserHandle,
-                stats: $body.stats,
-                lifeTimeStats: $body.lifeTimeStats
-            };
-            $payload.push({p3: this.p3})
-        });
+    if(p2 !== 'KO') {
+        rp(uriP2,options)
+            .then(function(repos) {
+                this.p2 = {
+                    username : repos.epicUserHandle,
+                    stats: repos.stats,
+                    lifeTimeStats: repos.lifeTimeStats
+                };
+                $payload['2'] = this.p2;
+                console.log('done p2')
+            })
+            .catch(function(err) {
+                console.log(err.message)
+            });
     }
 
-    console.log(self, p1, p2, p3)
+    if(p3 !== 'KO') {
+        rp(uriP3,options)
+            .then(function(repos) {
+                this.p3 = {
+                    username : repos.epicUserHandle,
+                    stats: repos.stats,
+                    lifeTimeStats: repos.lifeTimeStats
+                };
+                $payload['3'] = this.p3;
+                console.log('done p3')
+            })
+            .catch(function(err) {
+                console.log(err.message)
+            });
+    }
 
-   res.send($payload);
-    $payload = [];
+    setTimeout(function(){
+        res.send($payload);
+    }, 2000);
 
 });
-
 
 module.exports = router;
