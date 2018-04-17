@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
-import {GlobalStatModel} from "../../shared/model/globalStat.model";
+
 import * as _ from "lodash";
 
 @Component({
@@ -45,9 +45,7 @@ export class ActualSeasonComponent implements OnInit {
     const curr_solo = changes.getActualSeasonStats.currentValue.curr_p2;
     const curr_duo = changes.getActualSeasonStats.currentValue.curr_p10;
     const curr_squad = changes.getActualSeasonStats.currentValue.curr_p9;
-    if(_.get(this.solo, []) !== undefined) {
 
-    }
     this.solo =  {
       kd : curr_solo['kd'],
       top1 : curr_solo['top1'],
@@ -63,29 +61,12 @@ export class ActualSeasonComponent implements OnInit {
         matches : curr_duo['matches']
       };
       this.squad = {
-        kd : {
-          label : curr_squad['kd'],
-          value : curr_squad['kd']
-        },
-        top1 : {
-          label : curr_squad['top1'],
-          value : curr_squad['top1']
-        },
-        kills : {
-          label : curr_squad['kills'],
-          value : curr_squad['kills']
-        },
-        winRatio : {
-          label : curr_squad['winRatio'],
-          value : curr_squad['winRatio']
-        },
-        matches : {
-          label : curr_squad['matches'],
-          value : curr_squad['matches']
-        }
+        kd : curr_squad['kd'],
+        top1 : curr_squad['top1'],
+        kills : curr_squad['kills'],
+        winRatio :curr_squad['winRatio'],
+        matches : curr_squad['matches']
       };
-
-    console.log(this.solo);
   }
 
 }

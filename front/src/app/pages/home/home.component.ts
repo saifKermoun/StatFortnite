@@ -1,16 +1,30 @@
-import {Component} from '@angular/core';
-import { OnInit } from '@angular/core';
+import {Component, NgModule, OnInit } from '@angular/core';
+
+import {MatButtonModule, MatSelectModule, MatTabsModule} from '@angular/material';
+import {ToastrService} from "ngx-toastr";
+import {ServerService} from "../../shared/service/Server/server.service";
+import {StatsService} from "../../shared/service/StatService/stats.service";
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [ServerService]
 })
+
+@NgModule ({
+  imports : [MatButtonModule, MatSelectModule, MatTabsModule],
+  exports : [MatButtonModule, MatSelectModule, MatTabsModule],
+})
+
 export class HomeComponent implements OnInit {
 
   readyToCharge = false;
-  putPayloadForm = {};
+  payloadTotalStatUser = {
+    userName: '',
+    lifetime: {}
+  };
   payloadMatchHistory = {};
   payloadActualSeason = {
     curr_p2 : {},
@@ -18,56 +32,68 @@ export class HomeComponent implements OnInit {
     curr_p10 : {},
     charged : false
   };
+  payloadGlobalSeason = {
+    p2 : {},
+    p9 : {},
+    p10 : {}
+  };
+  status = {};
 
-  constructor() { }
+  constructor(private toastrService: ToastrService, private serverService: ServerService, private statService: StatsService) { }
 
-  ngOnInit() { }
-
-
-  /*getGeneralOnlyStat(username) {
-    this.statS.getStat('pc', username).subscribe(
-        res => {
-          this.$resStat = res;
-          if (!this.$resStat.error) {
-            this.$user = {
-              accountId : res.accountId,
-              platformID: res.accountId,
-              platformName : res.platformName,
-              platformNameLong : res.platformNameLong,
-              epicUserHandle : res.epicUserHandle
-            };
-            this.$lifeTimeStats = {
-              totWin : res.lifeTimeStats[8].value,
-              totMatches : res.lifeTimeStats[7].value,
-              totKill : res.lifeTimeStats[10].value,
-              totKD : res.lifeTimeStats[11].value,
-              totWPerc : res.lifeTimeStats[9].value,
-              totScore : res.lifeTimeStats[6].value,
-              timePlayed : res.lifeTimeStats[13].value,
-            };
-            this.$SoloGame = this.$resStat.stats['p2'];
-            this.$SquadGame = this.$resStat.stats['p9'];
-            this.$DuoGame = this.$resStat.stats['p10'];
-          } else {
-            this.$resStat = res;
-          }
-        },
-        err => this.errors.handleError('Erreur', 'Une erreur est survenue.'),
-        //() => console.log()
-    )
-  };*/
+  ngOnInit() {
+    this.serverService.getInfoServer().subscribe(
+      res => {
+          this.status = res;
+      },
+      err => (
+          this.toastrService.warning('Le server est down, veuillez patientez quelques instants.'),
+          this.readyToCharge = false,
+          console.log(err)
+      ),
+      // () => ()
+    );
+  }
 
   getFormData(payload) {
-    setTimeout(() => this.readyToCharge = true);
-    this.putPayloadForm = {payload : payload, charged : true};
+    if(payload.username != "" && this.status['status'] === 200) {
+      this.getStat(payload.platforms, payload.username)
+    }else {
+      setTimeout(() => this.readyToCharge = false);
+      this.toastrService.info("Le champ username est vide", "Info champ :")
+    }
   }
 
-  getIfCanCharge(can) {
-    this.readyToCharge = can;
+  getStat(platform, username) {
+    this.statService.getStat(platform, username).subscribe(
+      res => {
+        if (!res.error) {
+
+          //TODO: stats joueur sur l'ensemble de la semaine, (All,solo, duo, squad),
+          //TODO: stats joueur sur l'ensemble du mois, (All,solo, duo, squad)
+
+          //TODO: Comparaison sur les stats globals, et par type de game, sur X joueur
+
+          this.getTotalStatUser(res.epicUserHandle, res['lifeTimeStats']);
+          this.getGlobalSeasonStats(res['stats']);
+
+          this.getActualSeasonStats(res['stats']);
+          this.getMatchHistory(res['recentMatches']);
+        } else {
+          this.toastrService.error('Player not found !');
+        }
+      },
+      err =>  this.toastrService.warning('Server down', 'Le serveur est éteint.'),
+      () =>  setTimeout(() => this.readyToCharge = true)
+    );
   }
 
-  getMatchHistory(payload) {
-    this.payloadMatchHistory = {payload : payload, charged : true};
+  getGlobalSeasonStats(payload) {
+    this.payloadGlobalSeason = {
+      p2: payload.p2,
+      p9: payload.p9,
+      p10: payload.p10
+    };
   }
 
   getActualSeasonStats(payload) {
@@ -75,7 +101,19 @@ export class HomeComponent implements OnInit {
       curr_p2: payload.curr_p2,
       curr_p9: payload.curr_p9,
       curr_p10: payload.curr_p10,
-      charged : true  };
+      charged : true
+    };
   }
 
+  getMatchHistory(payload) {
+    this.payloadMatchHistory = {payload :  payload};
+    }
+
+    getTotalStatUser(username, payloadLF) {
+    this.payloadTotalStatUser = {
+      userName: username,
+      lifetime: payloadLF
+    }
+
+    }
 }

@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {ChartsModule} from "ng2-charts";
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,10 @@ import { GlobalStatComponent } from './components/global-stat/global-stat.compon
 import { SearchPlayerComponent } from './components/search-player/search-player.component';
 import { MatchHistoryComponent } from './components/match-history/match-history.component';
 import { ActualSeasonComponent } from './components/actual-season/actual-season.component';
+import {ServerService} from "./shared/service/Server/server.service";
+import { StatsWeekComponent } from './components/stats-week/stats-week.component';
+import { TotalStatsUserComponent } from './components/total-stats-user/total-stats-user.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { ActualSeasonComponent } from './components/actual-season/actual-season.
     GlobalStatComponent,
     SearchPlayerComponent,
     MatchHistoryComponent,
-    ActualSeasonComponent
+    ActualSeasonComponent,
+    StatsWeekComponent,
+    TotalStatsUserComponent
   ],
   imports: [
     BrowserModule,
@@ -34,14 +40,15 @@ import { ActualSeasonComponent } from './components/actual-season/actual-season.
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
-    MDBBootstrapModule,
+    MDBBootstrapModule.forRoot(),
     routes,
     CommonModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    BrowserAnimationsModule ,
+    ToastrModule.forRoot(),
+    HomeComponent
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [StatsService, ErrorService],
+  providers: [StatsService, ErrorService, ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
